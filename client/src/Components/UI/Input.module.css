@@ -13,9 +13,13 @@
   width: 280px;
   height: 40px;
   padding: 0 10px;
-  border: solid 1px #000;
-  border-radius: 5px;
+  border: solid 1px #dddeee;
   margin-right: 24px;
+}
+
+.input::placeholder {
+  color: #000;
+  opacity: 0.37;
 }
 
 @media screen and (max-width: 992px) {

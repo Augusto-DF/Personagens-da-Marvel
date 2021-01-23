@@ -8,9 +8,8 @@ const FormFindChar = (props) => {
     <form onSubmit={props.onSubmit} className={styles.form}>
       <Input
         onChange={props.onChange}
-        label="Nome do Personagem"
         input="pesonagem"
-        placeholder="Insira o nome do personagem aqui"
+        placeholder="Buscar personagem"
       />
       <Button
         nameButton={props.load ? 'Buscando...' : 'Buscar'}

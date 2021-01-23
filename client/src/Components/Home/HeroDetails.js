@@ -20,9 +20,8 @@ const HeroDetails = (props) => {
         />
       </div>
       <div className={styles.charInfos}>
-        <p>Nome do personagem: {hero.name}</p>
+        <p className={styles.title}>{hero.name}</p>
         <p>
-          Descrição:
           {hero.description
             ? ' ' + hero.description
             : ' Não há descrição sobre o personagem.'}

@@ -56,7 +56,7 @@ const Home = () => {
   }
 
   return (
-    <section>
+    <section className={styles.bgPage}>
       <div className={styles.container}>
         {!selectedCardInfo ? (
           <div>
