@@ -7,16 +7,18 @@ const ResultArea = (props) => {
   const data = JSON.parse(props.data);
   return (
     <div className={styles.result}>
-      {props.selectedCardInfo && (
+      {props.selectedCardInfo ? (
         <HeroDetails dataHero={props.selectedCardInfo} />
-      )}
-      {props.data &&
-        !props.cardSelected &&
+      ) : props.data ? (
         data.map((hero, count) => {
           return (
             <Card
               key={count}
-              img={hero.thumbnail.path + '.' + hero.thumbnail.extension}
+              img={
+                hero
+                  ? hero.thumbnail.path + '.' + hero.thumbnail.extension
+                  : undefined
+              }
               heroName={hero.name}
               onClick={() => {
                 props.setSelectedCardInfo(hero);
@@ -24,7 +26,8 @@ const ResultArea = (props) => {
               }}
             />
           );
-        })}
+        })
+      ) : undefined}
     </div>
   );
 };

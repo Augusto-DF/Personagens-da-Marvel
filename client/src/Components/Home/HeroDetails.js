@@ -38,8 +38,11 @@ const HeroDetails = (props) => {
                   <div key={comic.id} className={styles.comic}>
                     <img
                       src={
-                        comic.images.length > 0 &&
-                        comic.images[0].path + '.' + comic.images[0].extension
+                        comic.images.length > 0
+                          ? comic.images[0].path +
+                            '.' +
+                            comic.images[0].extension
+                          : undefined
                       }
                       alt={comic.title}
                     />

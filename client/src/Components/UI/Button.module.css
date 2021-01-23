@@ -3,5 +3,22 @@
   align-items: center;
   justify-content: center;
   width: 100px;
-  height: 44px;
+  height: 40px;
+  font-family: 'Anton', sans-serif;
+  color: azure;
+  background-color: #ff3000;
+  font-size: 16px;
 }
+
+/*.disabled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 40px;
+  font-family: 'Anton', sans-serif;
+  color: #708090;
+  background-color: #dcdcdc;
+  font-size: 16px;
+  cursor: unset;
+}*/

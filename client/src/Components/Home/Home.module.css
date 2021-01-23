@@ -1,4 +1,21 @@
 .container {
-  width: 1160px;
+  position: relative;
   margin: 0 auto;
+  max-width: 1160px;
+}
+
+.buttonsArea {
+  width: 100%;
+  margin: 48px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+  .buttonsArea {
+    margin: 48px 0;
+  }
 }

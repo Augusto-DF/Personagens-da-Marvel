@@ -1,16 +1,17 @@
 import React from 'react';
-import Input from './../UI/Input';
 import ResultArea from './ResultArea';
 import { findChar, listChars } from './../../Api/api';
 import styles from './Home.module.css';
 import Button from '../UI/Button';
+import FormFindChar from '../UI/Form/FormFindChar';
 const Home = () => {
   const [data, setData] = React.useState(null);
   const [currentPage, setCurrentPage] = React.useState(0);
   const [cardSelected, setCardSelected] = React.useState(false);
   const [selectedCardInfo, setSelectedCardInfo] = React.useState(null);
   const [nameChar, setNameChar] = React.useState('');
-  const [dataChar, setDataChar] = React.useState(false);
+  const [dataChar, setDataChar] = React.useState(null);
+  const [load, setLoad] = React.useState(false);
 
   React.useEffect(async () => {
     let result = await listChars(currentPage);
@@ -30,7 +31,7 @@ const Home = () => {
     if (cardSelected || dataChar) {
       setCardSelected(false);
       setSelectedCardInfo(null);
-      setDataChar(false);
+      setDataChar(null);
       return setCurrentPage(currentPage);
     }
   }
@@ -39,24 +40,33 @@ const Home = () => {
     setNameChar(event.target.value);
   }
 
-  async function findByName() {
-    let result = await findChar(nameChar);
+  async function findByName(e) {
+    e.preventDefault();
+    console.log('teste');
+    setLoad(true);
+    let result = await findChar(nameChar)
+      .then((res) => {
+        setSelectedCardInfo(null);
+        return res;
+      })
+      .finally(() => {
+        setLoad(false);
+      });
     setDataChar(JSON.stringify([result]));
-    console.log(JSON.parse(dataChar));
   }
 
   return (
     <section>
       <div className={styles.container}>
-        <div>
-          <Input
-            onChange={onChange}
-            label="Nome do Personagem"
-            input="pesonagem"
-            placeholder="Insira o nome do personagem aqui"
-          />
-          <Button nameButton="Pesquisar" onClick={findByName} />
-        </div>
+        {!selectedCardInfo ? (
+          <div>
+            <FormFindChar
+              onChange={onChange}
+              onSubmit={findByName}
+              load={load}
+            />
+          </div>
+        ) : undefined}
 
         <div>
           <ResultArea
@@ -67,8 +77,12 @@ const Home = () => {
             setSelectedCardInfo={setSelectedCardInfo}
           />
         </div>
-        <Button nameButton="< Back" onClick={backPage} />
-        <Button nameButton="Next >" onClick={nextPage} />
+        <div className={styles.buttonsArea}>
+          <Button nameButton="Back" onClick={backPage} />
+          {!cardSelected && !dataChar ? (
+            <Button nameButton="Next" onClick={nextPage} />
+          ) : undefined}
+        </div>
       </div>
     </section>
   );

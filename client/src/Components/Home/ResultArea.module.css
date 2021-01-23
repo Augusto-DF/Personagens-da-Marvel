@@ -1,6 +1,28 @@
 .result {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   column-gap: 12px;
   row-gap: 16px;
+  justify-content: center;
+}
+
+@media screen and (min-width: 993px) and (max-width: 1150px) {
+  .result {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 793px) and (max-width: 992px) {
+  .result {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 792px) {
+  .result {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    column-gap: 0px;
+    justify-items: center;
+  }
 }
