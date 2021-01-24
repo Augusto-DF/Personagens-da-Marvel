@@ -42,7 +42,6 @@ const Home = () => {
 
   async function findByName(e) {
     e.preventDefault();
-    console.log('teste');
     setLoad(true);
     let result = await findChar(nameChar)
       .then((res) => {
@@ -52,7 +51,7 @@ const Home = () => {
       .finally(() => {
         setLoad(false);
       });
-    setDataChar(JSON.stringify([result]));
+    if (result !== null) setDataChar(JSON.stringify([result]));
   }
 
   return (
@@ -70,7 +69,7 @@ const Home = () => {
 
         <div>
           <ResultArea
-            data={dataChar ? dataChar : data}
+            data={dataChar !== null ? dataChar : data}
             cardSelected={cardSelected}
             setCardSelected={setCardSelected}
             selectedCardInfo={selectedCardInfo}

@@ -119,7 +119,8 @@ export async function findChar(nameChar) {
     let dataList = json.data.results;
 
     dataList.map((target) => {
-      if (target.name === nameChar) charTarget = target;
+      if (target.name.toUpperCase() === nameChar.toUpperCase())
+        charTarget = target;
     });
     count++;
   }
