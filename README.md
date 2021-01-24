@@ -18,7 +18,7 @@ O projeto consiste em consultas a API. Buscando, a principio, os dados de todos 
 
 </br>
 
-## Soluções adotadas
+## 💡 Soluções adotadas
 
 O projeto é simples, a área onde é carregado os dados dos persongem tambem é carregado o conteúdo da busca pelo nome e do detalhamento do personagem. Sempre que o usuário passa a página é feita uma nova requisição à api, passando o parametro que define onde foi que o programa parou na ultima requisição, fazendo com que os novos dados não sejam iguais ao anterior. A parte da busca eu diria que é a mais complicada: Como a api não dá a possibilidade de buscar um personagem por nome, apenas por id, e existia um limite de quantos personagem a api poderia me passar a cada requisição ( limite de 100 ) foi necessário que: sempre que uma busca era inciada, essa busca era feita em blocos ( procura nos primeiros 100 não achou? vai pros proximos 100 até encontrar ).
 
