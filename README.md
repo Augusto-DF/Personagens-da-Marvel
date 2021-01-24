@@ -1,6 +1,6 @@
 # ProjetoSegfy
 
-<h2 align='center'><a  href='https://quirky-hodgkin-8c5beb.netlify.app/'>Acese a demonstração aqui.</h2>
+<h2 align='center'><a  href='https://quirky-hodgkin-8c5beb.netlify.app/'>Acesse a demonstração aqui.</h2>
 
 ## 📖 Sobre
 
