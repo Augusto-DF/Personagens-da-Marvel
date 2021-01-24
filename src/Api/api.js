@@ -4,7 +4,7 @@ var timestamp = new Date().getTime();
 const publicKey = 'a6e211518cd2bb6a0c04355eb705682c';
 const privateKey = '544ca8af816a130b36185ee09060b79a88e97465';
 const ts = timestamp; //'greatgreatgreatstring';
-const URL = 'http://gateway.marvel.com';
+const URL = 'https://gateway.marvel.com';
 const hash = CryptoJS.MD5(ts + privateKey + publicKey);
 const limit = 20;
 
