@@ -4,7 +4,7 @@
 
 ## 📖 Sobre
 
-#### O **ProjetoSegfy** é uma plataforma que consome a API da Marvel. Foi criada como teste de um processo seletivo para vaga na empresa **Segfy**.
+#### O **ProjetoSegfy** é uma plataforma que consome a API da Marvel. Foi criada como projeto pessoal para testar minhas habilidades.
 
 ---
 
