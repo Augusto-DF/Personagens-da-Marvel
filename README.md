@@ -1,10 +1,10 @@
-# ProjetoSegfy
+# Personagens-da-Marvel
 
 <h2 align='center'><a  href='https://quirky-hodgkin-8c5beb.netlify.app/'>Acesse a demonstração aqui.</h2>
 
 ## 📖 Sobre
 
-#### O **ProjetoSegfy** é uma plataforma que consome a API da Marvel. Foi criada como projeto pessoal para testar minhas habilidades.
+#### O **Personagens-da-Marvel** é uma plataforma que consome a API da Marvel. Foi criada como projeto pessoal para testar minhas habilidades.
 
 ---
 
